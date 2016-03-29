@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace ProjetCDD.Infra.Data.Repositorio
 {
-    public class RepositorioDeUsuarios : RepositorioBase<Usuario>/*, IRepositorioDeUsuarios*/
+    public class RepositorioDeUsuarios : RepositorioBase<Usuario>, IRepositorioDeUsuarios
     {
-        //public Usuario LogarUsusario(string email, string senha)
-        //{
-        //    var usuario = _Contexto.Ususarios.Where(u => u.Email == email).FirstOrDefault();
-        //    if (usuario == null)
-            
-        //        return null;
+        public Usuario LogarUsusario(string email, string senha)
+        {
+            var usuario = _Contexto.Ususarios.Where(u => u.Email == email).FirstOrDefault();
+            if (usuario == null)
 
-        //           }
+                return null;
+
+        }
 
         public Usuario RecuperarUsuarioPoremail(string email)
         {
